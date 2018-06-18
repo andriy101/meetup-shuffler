@@ -3,6 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.1.
 
 ## links
-https://stackblitz.com/github/andriy101/meetup-shuffler
-https://owaiwkop.github.stackblitz.io/
-https://meetup-shuffler.stackblitz.io/
+* https://stackblitz.com/github/andriy101/meetup-shuffler
+* https://owaiwkop.github.stackblitz.io/
+* https://meetup-shuffler.stackblitz.io/
+* https://github.com/andriy101/meetup-shuffler
