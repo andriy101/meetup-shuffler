@@ -1,0 +1,28 @@
+<form [formGroup]="form" (submit)="getAttendees(form.value)">
+  <div class="buttons">
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid && form.touched">Get attendees</button>
+    <button mat-raised-button color="primary" 
+            type="button" 
+            (click)="shuffling = !shuffling" 
+            [disabled]="!attendees || !attendees.length">
+      {{ shuffling ? 'Pause' : 'Resume' }} shuffling</button>
+    <button mat-raised-button color="warn" type="button" [disabled]="!attendees || !attendees.length || winners.length > 3" (click)="getRandomWinner()">Get a{{winners.length ? 'nother' : ''}} winner</button>
+    <button mat-raised-button color="primary" type="button" [disabled]="!winners.length" (click)="resetWinners()">Reset winners</button>
+  </div>
+
+	<mat-form-field style="width:100%">
+		<input matInput placeholder="MeetUp event URL" formControlName="meetupUrl">
+	</mat-form-field>
+</form>
+
+<ul [class]="'grid ' + randomClasses[classIndex]">
+  <li *ngFor="let attendee of attendees" [style.background-image]="'url(' + attendee.photo + ')'">
+    <div class="name">{{ attendee.name }}</div>
+  </li>
+</ul>
+
+<ul id="winners">
+  <li *ngFor="let winner of winners" [style.background-image]="'url(' + winner.photo + ')'">
+    <div class="name">{{ winner.name }}</div>
+  </li>
+</ul>
